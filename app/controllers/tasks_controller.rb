@@ -1,4 +1,36 @@
 class TasksController < ApplicationController
+    swagger_controller :tasks, "Tasks Management"
+    swagger_api :index do
+        summary "Fetches all Tasks"
+        notes "This lists all the Tasks"
+    end
+    swagger_api :show do
+         summary "Shows one Task"
+         param :path, :id, :integer, :required, "Task ID"
+         notes "This lists details of one Task"
+         response :not_found
+    end
+    swagger_api :create do
+         summary "Creates a new Task"
+         param :form, :name, :string, :required, "Name"
+         param :form, :points, :integer, :required, "Point"
+         param :form, :active, :boolean, :required, "Active"
+         response :not_acceptable
+    end
+    swagger_api :update do
+         summary "Updates an existing Task"
+         param :path, :id, :integer, :required, "Task Id"
+         param :form, :name, :string, :optional, "Name"
+         param :form, :points, :integer, :optional, "Points"
+         param :form, :active, :boolean, :optional, "Active"
+         response :not_found
+         response :not_acceptable
+    end
+    swagger_api :destroy do
+         summary "Deletes an existing Task"
+         param :path, :id, :integer, :required, "Task Id"
+         response :not_found
+    end
     # Controller Code
     before_action :set_tasks, only: [:show, :update, :destroy]
     

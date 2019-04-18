@@ -1,4 +1,37 @@
 class ChoresController < ApplicationController
+    swagger_controller :chores, "Chores Management"
+    swagger_api :index do
+        summary "Fetches all Chores"
+        notes "This lists all the Chores"
+    end
+    swagger_api :show do
+         summary "Shows one Task"
+         param :path, :id, :integer, :required, "Chore ID"
+         notes "This lists details of one Chore"
+         response :not_found
+    end
+    swagger_api :create do
+         summary "Creates a new Chore"
+         param :form, :child_id, :integer, :required, "Child_ID"
+         param :form, :task_id, :integer, :required, "Task_ID"
+         param :form, :due_on, :date, :required, "Due_On"
+         param :form, :completed, :boolean, :required, "Completed"
+         response :not_acceptable
+    end
+    swagger_api :update do
+         summary "Updates an existing Chore"
+         param :form, :child_id, :integer, :required, "Child_ID"
+         param :form, :task_id, :integer, :optional, "Task_ID"
+         param :form, :due_on, :date, :optional, "Due_On"
+         param :form, :completed, :boolean, :optional, "Completed"
+         response :not_found
+         response :not_acceptable
+    end
+    swagger_api :destroy do
+         summary "Deletes an existing Chore"
+         param :path, :id, :integer, :required, "Chore Id"
+         response :not_found
+    end
     # Controller Code
     before_action :set_chores, only: [:show, :update, :destroy]
     
