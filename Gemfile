@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'swagger-docs'
 gem 'active_model_serializers'
+gem 'rack-cors'
 
 #Use Validates Timeliness gem
 gem 'validates_timeliness'

@@ -9,6 +9,22 @@
       "operations": [
         {
           "summary": "Fetches all Children",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "active",
+              "type": "boolean",
+              "description": "Filter on whether or not the child is active",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "alphabetical",
+              "type": "boolean",
+              "description": "Order children by alphabetical",
+              "required": false
+            }
+          ],
           "notes": "This lists all the children",
           "nickname": "Children#index",
           "method": "get"
@@ -60,7 +76,6 @@
       "operations": [
         {
           "summary": "Shows one Child",
-          "notes": "This lists details of one child",
           "parameters": [
             {
               "paramType": "path",
@@ -70,6 +85,7 @@
               "required": true
             }
           ],
+          "notes": "This lists details of one child",
           "responseMessages": [
             {
               "code": 404,

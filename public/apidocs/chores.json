@@ -9,6 +9,36 @@
       "operations": [
         {
           "summary": "Fetches all Chores",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "done",
+              "type": "boolean",
+              "description": "Filter on whether or not the chore is done",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "upcoming",
+              "type": "boolean",
+              "description": "Filter on whether or not the chore is done",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "chronological",
+              "type": "boolean",
+              "description": "Order tasks by chronological",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "by_task",
+              "type": "boolean",
+              "description": "Order tasks by task",
+              "required": false
+            }
+          ],
           "notes": "This lists all the Chores",
           "nickname": "Chores#index",
           "method": "get"
@@ -67,7 +97,6 @@
       "operations": [
         {
           "summary": "Shows one Task",
-          "notes": "This lists details of one Chore",
           "parameters": [
             {
               "paramType": "path",
@@ -77,6 +106,7 @@
               "required": true
             }
           ],
+          "notes": "This lists details of one Chore",
           "responseMessages": [
             {
               "code": 404,

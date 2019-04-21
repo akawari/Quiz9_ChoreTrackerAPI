@@ -9,6 +9,22 @@
       "operations": [
         {
           "summary": "Fetches all Tasks",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "active",
+              "type": "boolean",
+              "description": "Filter on whether or not the task is active",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "alphabetical",
+              "type": "boolean",
+              "description": "Order tasks by alphabetical",
+              "required": false
+            }
+          ],
           "notes": "This lists all the Tasks",
           "nickname": "Tasks#index",
           "method": "get"
@@ -60,7 +76,6 @@
       "operations": [
         {
           "summary": "Shows one Task",
-          "notes": "This lists details of one Task",
           "parameters": [
             {
               "paramType": "path",
@@ -70,6 +85,7 @@
               "required": true
             }
           ],
+          "notes": "This lists details of one Task",
           "responseMessages": [
             {
               "code": 404,

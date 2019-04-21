@@ -2,6 +2,8 @@ class TasksController < ApplicationController
     swagger_controller :tasks, "Tasks Management"
     swagger_api :index do
         summary "Fetches all Tasks"
+        param :query, :active, :boolean, :optional, "Filter on whether or not the task is active" 
+        param :query, :alphabetical, :boolean, :optional, "Order tasks by alphabetical"
         notes "This lists all the Tasks"
     end
     swagger_api :show do
@@ -37,6 +39,14 @@ class TasksController < ApplicationController
     # GET /task
     def index
         @task = Task.all
+        
+        if(params[:active].present?)    
+             @task = params[:active] == "true" ? @task.active : @task.inactive  
+         end
+         
+        if params[:alphabetical].present? && params[:alphabetical] == "true"   
+             @task = @task.alphabetical
+         end 
         render json: @task
     end
     

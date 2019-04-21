@@ -2,6 +2,8 @@ class ChildrenController < ApplicationController
     swagger_controller :children, "Children Management"
     swagger_api :index do
         summary "Fetches all Children"
+        param :query, :active, :boolean, :optional, "Filter on whether or not the child is active" 
+        param :query, :alphabetical, :boolean, :optional, "Order children by alphabetical"
         notes "This lists all the children"
     end
     swagger_api :show do
@@ -36,8 +38,16 @@ class ChildrenController < ApplicationController
     
     # GET /children
     def index
-        @children = Child.all
-        render json: @children
+         @children = Child.all   
+         if(params[:active].present?)    
+             @children = params[:active] == "true" ? @children.active : @children.inactive  
+         end
+         
+         if params[:alphabetical].present? && params[:alphabetical] == "true"   
+             @children = @children.alphabetical
+         end 
+         
+         render json: @children 
     end
     
     # GET /children/1
