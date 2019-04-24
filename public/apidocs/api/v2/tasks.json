@@ -1,11 +1,11 @@
 {
-  "apiVersion": "1.0",
+  "apiVersion": "2.0",
   "swaggerVersion": "1.2",
   "basePath": "https://quiz9-api-akawari.c9users.io",
   "resourcePath": "tasks",
   "apis": [
     {
-      "path": "/tasks.json",
+      "path": "/v2/tasks.json",
       "operations": [
         {
           "parameters": [
@@ -33,13 +33,13 @@
           ],
           "summary": "Fetches all Tasks",
           "notes": "This lists all the Tasks",
-          "nickname": "Tasks#index",
+          "nickname": "Api::V2::Tasks#index",
           "method": "get"
         }
       ]
     },
     {
-      "path": "/tasks.json",
+      "path": "/v2/tasks.json",
       "operations": [
         {
           "parameters": [
@@ -80,13 +80,13 @@
               "message": "Not Acceptable"
             }
           ],
-          "nickname": "Tasks#create",
+          "nickname": "Api::V2::Tasks#create",
           "method": "post"
         }
       ]
     },
     {
-      "path": "/tasks/{id}.json",
+      "path": "/v2/tasks/{id}.json",
       "operations": [
         {
           "parameters": [
@@ -114,13 +114,13 @@
               "message": "Not Found"
             }
           ],
-          "nickname": "Tasks#show",
+          "nickname": "Api::V2::Tasks#show",
           "method": "get"
         }
       ]
     },
     {
-      "path": "/tasks/{id}.json",
+      "path": "/v2/tasks/{id}.json",
       "operations": [
         {
           "parameters": [
@@ -173,13 +173,13 @@
               "message": "Not Acceptable"
             }
           ],
-          "nickname": "Tasks#update",
+          "nickname": "Api::V2::Tasks#update",
           "method": "patch"
         }
       ]
     },
     {
-      "path": "/tasks/{id}.json",
+      "path": "/v2/tasks/{id}.json",
       "operations": [
         {
           "parameters": [
@@ -199,7 +199,7 @@
               "message": "Not Found"
             }
           ],
-          "nickname": "Tasks#destroy",
+          "nickname": "Api::V2::Tasks#destroy",
           "method": "delete"
         }
       ]

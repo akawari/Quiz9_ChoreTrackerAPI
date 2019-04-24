@@ -8,8 +8,14 @@
       "path": "/chores.json",
       "operations": [
         {
-          "summary": "Fetches all Chores",
           "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=19bbe2a152c611d42fbf3d1b50e38217",
+              "required": true
+            },
             {
               "paramType": "query",
               "name": "done",
@@ -39,6 +45,7 @@
               "required": false
             }
           ],
+          "summary": "Fetches all Chores",
           "notes": "This lists all the Chores",
           "nickname": "Chores#index",
           "method": "get"
@@ -49,8 +56,14 @@
       "path": "/chores.json",
       "operations": [
         {
-          "summary": "Creates a new Chore",
           "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=19bbe2a152c611d42fbf3d1b50e38217",
+              "required": true
+            },
             {
               "paramType": "form",
               "name": "child_id",
@@ -80,6 +93,7 @@
               "required": true
             }
           ],
+          "summary": "Creates a new Chore",
           "responseMessages": [
             {
               "code": 406,
@@ -96,8 +110,14 @@
       "path": "/chores/{id}.json",
       "operations": [
         {
-          "summary": "Shows one Task",
           "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=19bbe2a152c611d42fbf3d1b50e38217",
+              "required": true
+            },
             {
               "paramType": "path",
               "name": "id",
@@ -106,6 +126,7 @@
               "required": true
             }
           ],
+          "summary": "Shows one Task",
           "notes": "This lists details of one Chore",
           "responseMessages": [
             {
@@ -123,8 +144,14 @@
       "path": "/chores/{id}.json",
       "operations": [
         {
-          "summary": "Updates an existing Chore",
           "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=19bbe2a152c611d42fbf3d1b50e38217",
+              "required": true
+            },
             {
               "paramType": "form",
               "name": "child_id",
@@ -154,6 +181,7 @@
               "required": false
             }
           ],
+          "summary": "Updates an existing Chore",
           "responseMessages": [
             {
               "code": 404,
@@ -175,7 +203,6 @@
       "path": "/chores/{id}.json",
       "operations": [
         {
-          "summary": "Deletes an existing Chore",
           "parameters": [
             {
               "paramType": "path",
@@ -185,6 +212,7 @@
               "required": true
             }
           ],
+          "summary": "Deletes an existing Chore",
           "responseMessages": [
             {
               "code": 404,

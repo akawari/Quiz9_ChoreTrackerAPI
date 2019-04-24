@@ -1,11 +1,11 @@
 {
-  "apiVersion": "1.0",
+  "apiVersion": "2.0",
   "swaggerVersion": "1.2",
   "basePath": "https://quiz9-api-akawari.c9users.io",
-  "resourcePath": "tasks",
+  "resourcePath": "children",
   "apis": [
     {
-      "path": "/tasks.json",
+      "path": "/v1/children.json",
       "operations": [
         {
           "parameters": [
@@ -20,26 +20,26 @@
               "paramType": "query",
               "name": "active",
               "type": "boolean",
-              "description": "Filter on whether or not the task is active",
+              "description": "Filter on whether or not the child is active",
               "required": false
             },
             {
               "paramType": "query",
               "name": "alphabetical",
               "type": "boolean",
-              "description": "Order tasks by alphabetical",
+              "description": "Order children by alphabetical",
               "required": false
             }
           ],
-          "summary": "Fetches all Tasks",
-          "notes": "This lists all the Tasks",
-          "nickname": "Tasks#index",
+          "summary": "Fetches all Children",
+          "notes": "This lists all the children",
+          "nickname": "Api::V1::Children#index",
           "method": "get"
         }
       ]
     },
     {
-      "path": "/tasks.json",
+      "path": "/v1/children.json",
       "operations": [
         {
           "parameters": [
@@ -52,16 +52,16 @@
             },
             {
               "paramType": "form",
-              "name": "name",
+              "name": "first_name",
               "type": "string",
-              "description": "Name",
+              "description": "First name",
               "required": true
             },
             {
               "paramType": "form",
-              "name": "points",
-              "type": "integer",
-              "description": "Point",
+              "name": "last_name",
+              "type": "string",
+              "description": "Last name",
               "required": true
             },
             {
@@ -72,7 +72,7 @@
               "required": true
             }
           ],
-          "summary": "Creates a new Task",
+          "summary": "Creates a new Child",
           "responseMessages": [
             {
               "code": 406,
@@ -80,13 +80,13 @@
               "message": "Not Acceptable"
             }
           ],
-          "nickname": "Tasks#create",
+          "nickname": "Api::V1::Children#create",
           "method": "post"
         }
       ]
     },
     {
-      "path": "/tasks/{id}.json",
+      "path": "/v1/children/{id}.json",
       "operations": [
         {
           "parameters": [
@@ -101,12 +101,12 @@
               "paramType": "path",
               "name": "id",
               "type": "integer",
-              "description": "Task ID",
+              "description": "Child ID",
               "required": true
             }
           ],
-          "summary": "Shows one Task",
-          "notes": "This lists details of one Task",
+          "summary": "Shows one Child",
+          "notes": "This lists details of one child",
           "responseMessages": [
             {
               "code": 404,
@@ -114,13 +114,13 @@
               "message": "Not Found"
             }
           ],
-          "nickname": "Tasks#show",
+          "nickname": "Api::V1::Children#show",
           "method": "get"
         }
       ]
     },
     {
-      "path": "/tasks/{id}.json",
+      "path": "/v1/children/{id}.json",
       "operations": [
         {
           "parameters": [
@@ -135,21 +135,21 @@
               "paramType": "path",
               "name": "id",
               "type": "integer",
-              "description": "Task Id",
+              "description": "Child Id",
               "required": true
             },
             {
               "paramType": "form",
-              "name": "name",
+              "name": "first_name",
               "type": "string",
-              "description": "Name",
+              "description": "First name",
               "required": false
             },
             {
               "paramType": "form",
-              "name": "points",
-              "type": "integer",
-              "description": "Points",
+              "name": "last_name",
+              "type": "string",
+              "description": "Last name",
               "required": false
             },
             {
@@ -160,7 +160,7 @@
               "required": false
             }
           ],
-          "summary": "Updates an existing Task",
+          "summary": "Updates an existing Child",
           "responseMessages": [
             {
               "code": 404,
@@ -173,13 +173,13 @@
               "message": "Not Acceptable"
             }
           ],
-          "nickname": "Tasks#update",
+          "nickname": "Api::V1::Children#update",
           "method": "patch"
         }
       ]
     },
     {
-      "path": "/tasks/{id}.json",
+      "path": "/v1/children/{id}.json",
       "operations": [
         {
           "parameters": [
@@ -187,11 +187,11 @@
               "paramType": "path",
               "name": "id",
               "type": "integer",
-              "description": "Task Id",
+              "description": "Child Id",
               "required": true
             }
           ],
-          "summary": "Deletes an existing Task",
+          "summary": "Deletes an existing Child",
           "responseMessages": [
             {
               "code": 404,
@@ -199,7 +199,7 @@
               "message": "Not Found"
             }
           ],
-          "nickname": "Tasks#destroy",
+          "nickname": "Api::V1::Children#destroy",
           "method": "delete"
         }
       ]

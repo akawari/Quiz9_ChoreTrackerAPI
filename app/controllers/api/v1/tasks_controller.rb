@@ -1,3 +1,4 @@
+module Api::V1
 class TasksController < ApplicationController
     swagger_controller :tasks, "Tasks Management"
     swagger_api :index do
@@ -59,7 +60,7 @@ class TasksController < ApplicationController
     def create
         @task = Task.new(task_params)
         if @task.save
-            render json: @task, status: :created, location: @task
+            render json: @task, status: :created, location: [:v1, @task]
         else
             render json: @task.errors, status: :unprocessable_entity
         end
@@ -89,4 +90,5 @@ class TasksController < ApplicationController
     def task_params
         params.permit(:name, :points, :active)
     end
+end
 end

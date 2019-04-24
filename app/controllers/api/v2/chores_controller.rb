@@ -1,3 +1,4 @@
+module Api::V2
 class ChoresController < ApplicationController
     swagger_controller :chores, "Chores Management"
     swagger_api :index do
@@ -71,7 +72,7 @@ class ChoresController < ApplicationController
     def create
         @chore = Chore.new(chore_params)
         if @chore.save
-            render json: @chore, status: :created, location: @chore
+            render json: @chore, status: :created, location: [:v2, @chore]
         else
             render json: @chore.errors, status: :unprocessable_entity
         end
@@ -101,4 +102,5 @@ class ChoresController < ApplicationController
     def chore_params
         params.permit(:child_id, :task_id, :due_on, :completed)
     end
+end
 end

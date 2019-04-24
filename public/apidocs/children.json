@@ -8,8 +8,14 @@
       "path": "/children.json",
       "operations": [
         {
-          "summary": "Fetches all Children",
           "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=19bbe2a152c611d42fbf3d1b50e38217",
+              "required": true
+            },
             {
               "paramType": "query",
               "name": "active",
@@ -25,6 +31,7 @@
               "required": false
             }
           ],
+          "summary": "Fetches all Children",
           "notes": "This lists all the children",
           "nickname": "Children#index",
           "method": "get"
@@ -35,8 +42,14 @@
       "path": "/children.json",
       "operations": [
         {
-          "summary": "Creates a new Child",
           "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=19bbe2a152c611d42fbf3d1b50e38217",
+              "required": true
+            },
             {
               "paramType": "form",
               "name": "first_name",
@@ -59,6 +72,7 @@
               "required": true
             }
           ],
+          "summary": "Creates a new Child",
           "responseMessages": [
             {
               "code": 406,
@@ -75,8 +89,14 @@
       "path": "/children/{id}.json",
       "operations": [
         {
-          "summary": "Shows one Child",
           "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=19bbe2a152c611d42fbf3d1b50e38217",
+              "required": true
+            },
             {
               "paramType": "path",
               "name": "id",
@@ -85,6 +105,7 @@
               "required": true
             }
           ],
+          "summary": "Shows one Child",
           "notes": "This lists details of one child",
           "responseMessages": [
             {
@@ -102,8 +123,14 @@
       "path": "/children/{id}.json",
       "operations": [
         {
-          "summary": "Updates an existing Child",
           "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token in the format of: Token token=19bbe2a152c611d42fbf3d1b50e38217",
+              "required": true
+            },
             {
               "paramType": "path",
               "name": "id",
@@ -133,6 +160,7 @@
               "required": false
             }
           ],
+          "summary": "Updates an existing Child",
           "responseMessages": [
             {
               "code": 404,
@@ -154,7 +182,6 @@
       "path": "/children/{id}.json",
       "operations": [
         {
-          "summary": "Deletes an existing Child",
           "parameters": [
             {
               "paramType": "path",
@@ -164,6 +191,7 @@
               "required": true
             }
           ],
+          "summary": "Deletes an existing Child",
           "responseMessages": [
             {
               "code": 404,

@@ -1,3 +1,4 @@
+module Api::V2
 class ChoreSerializer < ActiveModel::Serializer
     attributes :id, :child_id, :task, :due_on, :completed
     
@@ -8,4 +9,5 @@ class ChoreSerializer < ActiveModel::Serializer
     def task
         ChoreTaskSerializer.new(object.task)
     end
+end
 end

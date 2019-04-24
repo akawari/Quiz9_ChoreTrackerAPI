@@ -25,3 +25,23 @@ Swagger::Docs::Config.register_apis({
  }
  }
 })
+
+Swagger::Docs::Config.register_apis({
+ "2.0" => {
+ # the extension used for the API
+ :api_extension_type => :json,
+ # the output location where your .json files are written to
+ :api_file_path => "public/apidocs",
+ # the URL base path to your API (make sure to change this if you are not using localhost:3000)
+ :base_path => "https://quiz9-api-akawari.c9users.io/",
+ # if you want to delete all .json files at each generation
+ :clean_directory => false,
+ # add custom attributes to api-docs
+ :attributes => {
+ :info => {
+ "title" => "Chore Tracker API",
+ "description" => "Uses swagger ui and docs to document the ChoreTracker API"
+ }
+ }
+ }
+})

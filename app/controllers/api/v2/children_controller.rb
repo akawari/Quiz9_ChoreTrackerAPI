@@ -1,3 +1,4 @@
+module Api::V2
 class ChildrenController < ApplicationController
     swagger_controller :children, "Children Management"
     swagger_api :index do
@@ -59,7 +60,7 @@ class ChildrenController < ApplicationController
     def create
         @child = Child.new(child_params)
         if @child.save
-            render json: @child, status: :created, location: @child
+            render json: @child, status: :created, location: [:v2, @child]
         else
             render json: @child.errors, status: :unprocessable_entity
         end
@@ -89,4 +90,5 @@ class ChildrenController < ApplicationController
     def child_params
         params.permit(:first_name, :last_name, :active)
     end
+end
 end

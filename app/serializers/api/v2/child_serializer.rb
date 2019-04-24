@@ -1,3 +1,4 @@
+module Api::V2
 class ChildSerializer < ActiveModel::Serializer
   attributes :id, :name, :points_earned, :active, :completed_chores, :pending_chores
   
@@ -12,4 +13,5 @@ class ChildSerializer < ActiveModel::Serializer
         ChoreSerializer.new(chore)
     end
   end
+end
 end
