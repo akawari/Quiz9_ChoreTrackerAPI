@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :application
       
       get '/token' => 'application#token', as: :token
+      
     end
   end
   
